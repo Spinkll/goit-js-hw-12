@@ -43,3 +43,26 @@ export function renderImages(images) {
 
   lightbox.refresh();
 }
+
+export function initializeLightbox() {
+  new SimpleLightbox('.gallery a', {
+    animationSpeed: 200,
+    animationSlide: true,
+    disableScroll: false,
+    history: false,
+    captionsData: 'alt',
+    captionDelay: 250,
+  });
+}
+
+export function getGalleryCardHeight() {
+  const card = document.querySelector('.card');
+  return card.getBoundingClientRect().height;
+}
+
+export function scrollToNextGroup(height) {
+  window.scrollBy({
+    top: height,
+    behavior: 'smooth',
+  });
+}

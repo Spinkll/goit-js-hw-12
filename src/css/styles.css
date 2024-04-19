@@ -24,7 +24,11 @@
   -webkit-text-size-adjust: 100%;
 }
 
-button {
+body {
+  scroll-behavior: smooth;
+}
+
+.SearchBtn {
   border-radius: 8px;
   width: 70px;
   height: 40px;
@@ -37,6 +41,26 @@ button {
   background: #4e75ff;
   cursor: pointer;
   order: 1;
+}
+
+.loadBtn {
+  border-radius: 8px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: #4e75ff;
+  cursor: pointer;
+  order: 1;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.loadBtn.hidden {
+  display: none;
 }
 
 input {
@@ -103,8 +127,8 @@ button:hover {
   border: 5px solid black;
   border-bottom-color: transparent;
   border-radius: 50%;
-  display: block;
-  position: fixed;
+  display: flex;
+  margin: 0 auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
