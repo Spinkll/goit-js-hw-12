@@ -23,6 +23,7 @@ let totalHits = 0;
 form.addEventListener('submit', async evt => {
   evt.preventDefault();
   query = input.value.trim();
+  page = 1;
 
   if (!query) {
     iziToast.error({
@@ -61,7 +62,6 @@ loadBtn.addEventListener('click', async () => {
       position: 'topRight',
       message: "We're sorry, but you've reached the end of search results.",
     });
-    return;
   }
   const { hits: images } = await fetchImage(query, perPage, page);
   renderImages(images);
